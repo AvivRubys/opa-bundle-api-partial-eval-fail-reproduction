@@ -1,6 +1,6 @@
 services:
     - name: bundle-api
-      url: http://localhost:8000/
+      url: http://bundle-api/
 bundles:
     simple:
         service: bundle-api

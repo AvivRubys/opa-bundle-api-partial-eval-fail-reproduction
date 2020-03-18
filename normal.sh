@@ -1,1 +1,0 @@
-curl http://localhost:8181/v1/data -d @input.json -s

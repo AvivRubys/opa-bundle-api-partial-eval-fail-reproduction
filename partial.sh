@@ -1,1 +1,0 @@
-curl http://localhost:8181/v1/data?partial -d @input.json -s

@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+    bundle-api:
+        image: nginx
+        ports:
+            - 80:80
+        volumes:
+            - .:/usr/share/nginx/html:ro
+
+    opa:
+        image: openpolicyagent/opa
+        ports:
+            - 8181:8181
+        command: run --server --log-format text --config-file /var/opa/config.yaml
+        volumes:
+            - .:/var/opa
+
+    normal:
+        image: curlimages/curl
+        command: http://opa:8181/v1/data -d @/var/data/input.json -v
+        volumes:
+            - .:/var/data
+
+    partial:
+        image: curlimages/curl
+        command: http://opa:8181/v1/data?partial -d @/var/data/input.json -v
+        volumes:
+            - .:/var/data
