@@ -1,0 +1,1 @@
+opa run --server --log-format text --config-file config.yaml

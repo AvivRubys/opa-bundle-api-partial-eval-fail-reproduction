@@ -1,0 +1,7 @@
+services:
+    - name: bundle-api
+      url: http://localhost:8000/
+bundles:
+    simple:
+        service: bundle-api
+        resource: /bundle.tar.gz
