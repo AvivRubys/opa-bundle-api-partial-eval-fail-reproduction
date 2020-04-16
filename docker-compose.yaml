@@ -9,7 +9,7 @@ services:
             - .:/usr/share/nginx/html:ro
 
     opa:
-        image: openpolicyagent/opa
+        image: openpolicyagent/opa:0.19.1
         ports:
             - 8181:8181
         command: run --server --log-format text --config-file /var/opa/config.yaml
